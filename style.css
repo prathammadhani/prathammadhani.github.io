@@ -67,7 +67,7 @@ img { max-width: 100%; display: block; }
 
 /* ── UTILITIES ── */
 .container { max-width: var(--max-w); margin: 0 auto; padding: 0 28px; }
-.section    { padding: 100px 0; }
+.section     { padding: 100px 0; }
 .section-sm { padding: 72px 0; }
 
 .eyebrow {
@@ -396,9 +396,7 @@ nav {
   to   { opacity: 1; transform: none; }
 }
 
-/* ═══════════════════════════════════════
-   ABOUT
-   ═══════════════════════════════════════ */
+/* ── ABOUT ── */
 #about { background: var(--bg2); }
 .about-grid {
   display: grid; grid-template-columns: 1.1fr 0.9fr;
@@ -428,9 +426,7 @@ nav {
 .about-card-val sup { font-size: 14px; color: var(--accent); }
 .about-card-label { font-size: 12.5px; color: var(--text3); font-weight: 500; }
 
-/* ═══════════════════════════════════════
-   SKILLS
-   ═══════════════════════════════════════ */
+/* ── SKILLS ── */
 #skills { background: var(--bg); }
 .skills-grid {
   display: grid;
@@ -455,7 +451,7 @@ nav {
   display: flex; align-items: center; gap: 9px;
 }
 .skill-ico { font-size: 17px; }
-.skill-tags { display: flex; flex-wrap: wrap; gap: 7px; }
+.skills-grid { display: flex; flex-wrap: wrap; gap: 7px; }
 .skill-tag {
   font-size: 12.5px; font-weight: 500;
   padding: 5px 11px; border-radius: 6px;
@@ -468,9 +464,7 @@ nav {
   border-color: rgba(37,99,235,0.18);
 }
 
-/* ═══════════════════════════════════════
-   EXPERIENCE
-   ═══════════════════════════════════════ */
+/* ── EXPERIENCE ── */
 #experience { background: var(--bg2); }
 .timeline { position: relative; padding-left: 32px; }
 .timeline::before {
@@ -540,9 +534,7 @@ nav {
   color: var(--text3); border: 1px solid var(--border);
 }
 
-/* ═══════════════════════════════════════
-   EDUCATION
-   ═══════════════════════════════════════ */
+/* ── EDUCATION ── */
 #education { background: var(--bg); }
 .edu-card {
   background: var(--surface); border: 1px solid var(--border);
@@ -575,9 +567,7 @@ nav {
   border-color: rgba(16,185,129,0.2);
 }
 
-/* ═══════════════════════════════════════
-   ACHIEVEMENTS
-   ═══════════════════════════════════════ */
+/* ── ACHIEVEMENTS ── */
 #achievements { background: var(--bg2); }
 .ach-grid {
   display: grid; grid-template-columns: repeat(2, 1fr);
@@ -612,9 +602,7 @@ nav {
   display: inline-block;
 }
 
-/* ═══════════════════════════════════════
-   RESUME CTA
-   ═══════════════════════════════════════ */
+/* ── RESUME CTA ── */
 #resume-cta { background: var(--bg); }
 .resume-banner {
   background: linear-gradient(135deg, #1d4ed8 0%, #2563eb 50%, #1d4ed8 100%);
@@ -649,9 +637,7 @@ nav {
 }
 .geo-note span { font-size: 14px; }
 
-/* ═══════════════════════════════════════
-   CONTACT
-   ═══════════════════════════════════════ */
+/* ── CONTACT ── */
 #contact { background: var(--bg2); }
 .contact-grid {
   display: grid; grid-template-columns: 1fr 1fr;
@@ -714,9 +700,7 @@ nav {
   border-color: rgba(234,179,8,0.2);
 }
 
-/* ═══════════════════════════════════════
-   FOOTER
-   ═══════════════════════════════════════ */
+/* ── FOOTER ── */
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -751,18 +735,14 @@ footer {
 }
 .back-top:hover { gap: 9px; }
 
-/* ═══════════════════════════════════════
-   SCROLL ANIMATIONS
-   ═══════════════════════════════════════ */
+/* ── SCROLL ANIMATIONS ── */
 .reveal {
   opacity: 0; transform: translateY(20px);
   transition: opacity 0.55s ease, transform 0.55s ease;
 }
 .reveal.visible { opacity: 1; transform: none; }
 
-/* ═══════════════════════════════════════
-   RESPONSIVE
-   ═══════════════════════════════════════ */
+/* ── RESPONSIVE ── */
 @media (max-width: 1024px) {
   .hero-inner { grid-template-columns: 1fr 420px; gap: 40px; }
 }
@@ -770,13 +750,67 @@ footer {
 @media (max-width: 860px) {
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .hero-inner { grid-template-columns: 1fr; text-align: center; gap: 44px; padding: 60px 0; }
+  
+  /* Refactoring layout to stack securely and clear space boundaries */
+  .hero-inner { 
+    grid-template-columns: 1fr; 
+    text-align: center; 
+    gap: 44px; 
+    padding: 40px 0 60px; 
+  }
   .hero-desc  { margin: 0 auto 36px; }
-  .hero-actions { justify-content: center; }
-  .hero-stats   { justify-content: center; }
+  
+  /* Added absolute layout wrapping protection for buttons */
+  .hero-actions { 
+    flex-direction: column; 
+    align-items: center; 
+    justify-content: center; 
+    gap: 12px;
+    margin-bottom: 40px; /* Provides separation spacing before the coding card */
+  }
+  .hero-actions .btn {
+    width: 100%;
+    max-width: 320px;
+    justify-content: center;
+  }
+  
   .hero-badge   { margin: 0 auto 26px; display: inline-flex; }
-  .hero-right   { order: -1; }
-  .hero-code-card { max-width: 480px; }
+
+  /* UPDATED: Removed order: -1 so it aligns sequentially AFTER info elements */
+  /* CHANGED: Configured margins to center card inside home section */
+  .hero-right   { 
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: center;
+    margin: 0 auto 44px; 
+  }
+  
+  /* Constraining Code Card limits safely inside viewports */
+  .hero-code-card { 
+    max-width: 440px; 
+    width: 100%;
+    min-width: 0;
+    margin: 0 auto;
+  }
+  .code-body {
+    overflow-x: auto;
+    white-space: pre;
+    font-size: 11.5px !important;
+    padding: 16px 16px 20px !important;
+  }
+
+  /* Refactoring metrics container to prevent overflow gaps and position below card cleanly */
+  .hero-stats   { 
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 24px !important;
+    justify-content: center; 
+    max-width: 440px;
+    margin: 0 auto;
+    padding-top: 24px;
+  }
+  
   .about-grid { grid-template-columns: 1fr; gap: 44px; }
   .skills-grid { grid-template-columns: 1fr 1fr; }
   .ach-grid { grid-template-columns: 1fr; }
@@ -789,4 +823,25 @@ footer {
   .section { padding: 72px 0; }
   .skills-grid { grid-template-columns: 1fr; }
   .about-cards { grid-template-columns: 1fr 1fr; }
+}
+
+/* Newly integrated safety rules for ultra-compact mobile screens */
+@media (max-width: 480px) {
+  .hero-name {
+    font-size: 2.8rem !important;
+    line-height: 1.1;
+  }
+  .hero-stats {
+    grid-template-columns: 1fr !important;
+    gap: 20px !important;
+    text-align: center;
+  }
+  .about-cards {
+    grid-template-columns: 1fr;
+  }
+  .edu-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px;
+  }
 }
