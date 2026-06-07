@@ -1,308 +1,744 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="UTF-8">
-    <title>Pratham Madhani</title>
-    <link rel="stylesheet" href="style.css">
-    <!-- Fontawesome CDN Link -->
-    <link rel="shortcut icon" type="image/jpg" href="Images/PM+Logo.png"/>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"/>
-     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   </head>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── PRIMARY SEO ── -->
+  <title>Pratham Madhani - Senior Software Engineer | Java, Spring Boot, Kafka | Trellix</title>
+  <meta name="description"
+    content="Pratham Madhani is a Senior Software Engineer at Trellix, Bengaluru with 3+ years building scalable microservices, event-driven systems, and AI pipelines using Java, Spring Boot, and Apache Kafka. LeetCode Knight with rating 1902." />
+  <meta name="keywords"
+    content="Pratham Madhani, Pratham Madhani Software Engineer, Pratham Madhani Trellix, Pratham Madhani Java Developer, Pratham Madhani Bengaluru, Senior Software Engineer Java, Spring Boot Developer India, Apache Kafka Engineer, Microservices Developer Bengaluru, LeetCode Knight 1902, Pratham Madhani portfolio, Pratham Madhani GitHub" />
+  <meta name="author" content="Pratham Madhani" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://prathammadhani.github.io/" />
+
+  <!-- ── OPEN GRAPH (LinkedIn, WhatsApp, Facebook) ── -->
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Pratham Madhani — Senior Software Engineer at Trellix" />
+  <meta property="og:description"
+    content="Senior SDE at Trellix with 3+ years in Java, Spring Boot, Kafka & Microservices. LeetCode Knight (1902 rating). AIR 145 in Credit Suisse Global Coding Challenge." />
+  <meta property="og:url" content="https://prathammadhani.github.io/" />
+  <meta property="og:site_name" content="Pratham Madhani Portfolio" />
+  <meta property="profile:first_name" content="Pratham" />
+  <meta property="profile:last_name" content="Madhani" />
+
+  <!-- ── TWITTER CARD ── -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Pratham Madhani - Senior Software Engineer" />
+  <meta name="twitter:description"
+    content="Senior SDE at Trellix. Java · Spring Boot · Kafka · Microservices. LeetCode Knight 1902." />
+
+  <!-- ── THEME & MOBILE ── -->
+  <meta name="theme-color" content="#2563eb" />
+  <meta name="mobile-web-app-capable" content="yes" />
+
+  <!-- ── STRUCTURED DATA: Person (JSON-LD) ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Pratham Madhani",
+    "url": "https://prathammadhani.github.io",
+    "image": "https://prathammadhani.github.io/",
+    "jobTitle": "Senior Software Engineer",
+    "worksFor": {
+      "@type": "Organization",
+      "name": "Trellix",
+      "url": "https://www.trellix.com"
+    },
+    "alumniOf": {
+      "@type": "CollegeOrUniversity",
+      "name": "Savitribai Phule Pune University",
+      "alternateName": "SPPU"
+    },
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Bengaluru",
+      "addressRegion": "Karnataka",
+      "addressCountry": "IN"
+    },
+    "email": "prathamadhani28@gmail.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/pratham-madhani-4a05091b8/",
+      "https://github.com/prathammadhani",
+      "https://leetcode.com/u/Insane07/"
+    ],
+    "knowsAbout": [
+      "Java", "Spring Boot", "Apache Kafka", "Microservices",
+      "System Design", "Low-Level Design", "Data Structures and Algorithms",
+      "PostgreSQL", "MongoDB", "AWS", "Docker", "Kubernetes",
+      "Distributed Systems", "REST APIs", "GenAI"
+    ],
+    "description": "Senior Software Engineer at Trellix with 3+ years of experience building scalable microservices, event-driven systems, and AI pipelines. LeetCode Knight with rating 1902 and 1400+ problems solved."
+  }
+  </script>
+
+  <!-- ── STRUCTURED DATA: WebSite ── -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "name": "Pratham Madhani Portfolio",
+    "url": "https://prathammadhani.github.io",
+    "description": "Personal portfolio of Pratham Madhani, Senior Software Engineer at Trellix",
+    "author": {
+      "@type": "Person",
+      "name": "Pratham Madhani"
+    }
+  }
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Favicons -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon.png" />
+  <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="assets/favicon.png" />
+  <meta name="msapplication-TileColor" content="#0f1117" />
+  <meta name="msapplication-TileImage" content="favicon.png" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" />
+
+  <!-- Inline theme init to prevent flash -->
+  <script>
+    (function () {
+      const t = localStorage.getItem('pm-theme') || 'light';
+      document.documentElement.setAttribute('data-theme', t);
+    })();
+  </script>
+</head>
+
 <body>
-  <!-- Move to up button -->
-  <div class="scroll-button">
-    <a href="#home"><i class="fas fa-arrow-up"></i></a>
-  </div>
-  <!-- navgaition menu -->
+
+  <!-- ── SCROLL PROGRESS ── -->
+  <div id="scroll-progress"></div>
+
+  <!-- ══════════════════════════════════════════
+     NAVBAR
+     ══════════════════════════════════════════ -->
   <nav>
-    <div class="navbar">
-      <div class="logo"><a href="#">Portfolio.</a></div>
-      <ul class="menu">
-          <li><a href="#home">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#edu">Education</a></li>
-          <li><a href="#exp">Experience</a></li>
-          <li><a href="#pro">Projects</a></li>
-          <li><a href="#services">Hobbies</a></li>
-          <li><a href="#contact">Contact</a></li>
-          <div class="cancel-btn">
-            <i class="fas fa-times"></i>
-          </div>
+    <div class="container nav-inner">
+      <a href="#hero" class="nav-logo">PM<span>.</span></a>
+
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#achievements">Achievements</a></li>
+        <li><a href="#contact">Contact</a></li>
       </ul>
-      <div class="media-icons">
-        <a href="https://www.linkedin.com/in/pratham-madhani-4a05091b8/"><i class="fab fa-linkedin-in"></i></a>
-        <a href="https://github.com/P-28032002/"><i class="fab fa-github"></i></a>
-        <a href="https://www.facebook.com/pratham.madhani"><i class="fab fa-facebook-f"></i></a>
-        <a href="https://twitter.com/PrathamMadhani"><i class="fab fa-twitter"></i></a>
+
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+
+        <a href="#contact" class="btn btn-primary" style="padding:9px 18px;font-size:13.5px">
+          Get in touch
+        </a>
+
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <span></span><span></span><span></span>
+        </button>
       </div>
-    </div>
-    <div class="menu-btn">
-      <i class="fas fa-bars"></i>
     </div>
   </nav>
 
-<!-- Home Section Start -->
- <section class="home" id="home">
-   <div class="home-content">
-     <div class="text">
-       <div class="text-one">Hello,</div>
-       <div class="text-two">I'm Pratham Madhani</div>
-       <div class="text-three">Undergraduate computer science student</div>
-       <div class="text-four">From Maharashtra,India</div>
-     </div>
-  
-   </div>
- </section>
-
-<!-- About Section Start -->
-<section class="about" id="about">
-  <div class="content">
-    <div class="title"><span>About Me</span></div>
-  <div class="about-details">
-    <div class="left">
-      <img src="Images/about.jpeg" alt="">
-    </div>
-    <div class="right">
-      <div class="topic">Upcoming Software Engineer, Computer Programming Enthusiast</div>
-      <p>I am Pratham Madhani, a final year computer engineering student at Pune University with a maintained GPA of 9.36/10. Currently, I’m a Graduate Intern Technical at Trellix (formally a merger of McAfee and FireEye, Inc.). I have worked as a Software Engineer Intern at Curelink which is a healthcare startup with over 1,00,000 users. Also previously, I have worked as a Software Engineer Intern at Musafir.com, and as Web Development Intern at Tebixa Technologies which is an IT consulting and services startup.</p>
-      <br>
-      <p>Apart from this, I also have a strong understanding of data structures and algorithms and have been consistent on coding platforms such as Codechef and Leetcode. My max rating on Codechef is 1722 and max rating is 1902 (solved 740+ questions) on Leetcode. Also I have secured Runner Up (2nd) position among 11000+ participants in Amdocs Hackfest 2022. I have secured an AIR 145 and a global rank 197 in the Global Coding Challenge 4.0 organized by Credit Suisse. I have secured Runner Up (2nd) position in the Citi Code Challenge 2022 organized by CitiIndia. Recently my team and I have qualified for the ICPC Amritapuri Contest 2022 and we have secured 63th rank in the ICPC Amritapuri Regionals round which was held in April 2023.</p>
-      <div class="button">
-        <button><a href ="Pratham Madhani's Resume.pdf" download>Download CV</a></button>
-      </div>
-    </div>
+  <!-- Mobile menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="#about" onclick="closeMobile()">About</a>
+    <a href="#skills" onclick="closeMobile()">Skills</a>
+    <a href="#experience" onclick="closeMobile()">Experience</a>
+    <a href="#achievements" onclick="closeMobile()">Achievements</a>
+    <a href="#contact" onclick="closeMobile()">Contact</a>
   </div>
-  </div>
-</section>
 
-<!-- My Skill Section Start -->
-<!-- Section Tag and Other Div will same where we need to put same CSS -->
-<section class="skills" id="skills">
- <div class="content">
-   <div class="title"><span>My Skills</span></div>
-   <div class="skills-details">
-     <div class="text">
-       <img src="Images/skills.gif" alt="skills" style="width:550px;height:400px;border-radius:30px">
-     </div>
-     <div class="boxes">
-       <div class="box">
-         <div class="topic">C</div>
-         <div class="per">90%</div>
-       </div>
-       <div class="box">
-         <div class="topic">C++</div>
-         <div class="per">90%</div>
-       </div>
-       <div class="box">
-         <div class="topic">Python</div>
-         <div class="per">80%</div>
-       </div>
-       <div class="box">
-         <div class="topic">Data Structures</div>
-         <div class="per">90%</div>
-       </div>
-       <div class="box">
-        <div class="topic">Algorithms</div>
-        <div class="per">90%</div>
-      </div>
-      <div class="box">
-        <div class="topic">HTML</div>
-        <div class="per">80%</div>
-      </div>
-      <div class="box">
-        <div class="topic">CSS</div>
-        <div class="per">70%</div>
-      </div>
-      <div class="box">
-        <div class="topic">JavaScript</div>
-        <div class="per">70%</div>
-      </div>
-      <div class="box">
-        <div class="topic">Django</div>
-        <div class="per">80%</div>
-      </div>
-      <div class="box">
-        <div class="topic">SQL</div>
-        <div class="per">90%</div>
-      </div>
-      <div class="box">
-        <div class="topic">NodeJs</div>
-        <div class="per">70%</div>
-      </div>
-      <div class="box">
-        <div class="topic">Angular</div>
-        <div class="per">70%</div>
-      </div>
-     </div>
-   </div>
- </div>
-</section>
+  <!-- ══════════════════════════════════════════
+     HERO
+     ══════════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
 
-<!--Education-->
-<section class="services" id="edu">
-  <div class="timeline">
-    <div class="heading"><span>Education</span></div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">2019-Present</h1>
-        <h1 class="card-title-small">MIT Academy of Engineering, Pune</h1>
-        <h1 class="card-title-small">Computer Engineering</h1>
-        <h1 class="card-title-small">CGPA :- 9.36/10</h1>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">2017-2019</h1>
-        <h1 class="card-title">Matoshree Junior College Eklahre, Nashik</h1>
-        <h1 class="card-title-small">Science</h1>
-        <h1 class="card-title-small">HSC Examination 2019 Percentage :- 75.54%</h1>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">2005-2017</h1>
-        <h1 class="card-title">Don Bosco High School, Nashik.</h1>
-        <h1 class="card-title-small">Primary and Secondary School Education</h1>
-        <h1 class="card-title-small">SSC Examination 2017 Percentage :- 93.40%</h1>
-      </div>
-    </div>
-  </div>
-  </div>
-</section>
+    <div class="container">
+      <div class="hero-inner">
 
-<!--Experience-->
-<section class="services" id="exp">
-  <div class="timeline">
-    <div class="heading"><span>Experience</span></div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">Jan 2023 - Present</h1>
-        <h1 class="card-title-small">Graduate Intern Technical</h1>
-        <h1 class="card-title-small">Trellix</h1>
-        <p class="card-detail">1. Working as a Graduate Intern Technical in Threat Intelligence Exchange(TIE) Team which sets the reputation for the files.<br>2. Working on research and development of integration of TIE with Intelligence Virtual Exchange.<br><br>Skills :- Java, Spring Core, Spring MVC, PostgreSQL, Hibernate.</p>
+        <!-- LEFT: Text -->
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="hero-badge-dot"></span>
+            Available for Senior SDE opportunities
+          </div>
+
+          <h1 class="hero-name">
+            Pratham<br>
+            <span class="accent">Madhani</span>
+          </h1>
+
+          <div class="hero-typing-wrap">
+            <span class="typed-prefix">I am a </span><span class="hero-typing" id="typed-text"></span><span
+              class="typed-cursor"></span>
+          </div>
+
+          <p class="hero-desc">
+            I build <strong>scalable microservices and event-driven systems</strong> that handle billions of records in
+            production at Trellix - working on AI pipelines, real-time telemetry, and cloud infrastructure for global
+            enterprise customers.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#experience" class="btn btn-primary">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                aria-hidden="true">
+                <rect x="2" y="7" width="20" height="14" rx="2" />
+                <path d="M16 7V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v2" />
+              </svg>
+              View Experience
+            </a>
+            <button class="btn btn-outline" onclick="downloadResume()" id="downloadBtn">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                aria-hidden="true">
+                <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                <polyline points="7 10 12 15 17 10" />
+                <line x1="12" y1="15" x2="12" y2="3" />
+              </svg>
+              Download Resume
+            </button>
+            <a href="https://linkedin.com/in/pratham-madhani-4a05091b8" target="_blank" rel="noopener"
+              class="btn btn-outline">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z" />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" />
+              </svg>
+              LinkedIn
+            </a>
+          </div>
+
+          <div class="hero-stats">
+            <div>
+              <div class="stat-val">3<sup>+</sup></div>
+              <div class="stat-label">Years at Trellix</div>
+            </div>
+            <div>
+              <div class="stat-val">99<sup>%</sup></div>
+              <div class="stat-label">Threat Reduction</div>
+            </div>
+            <div>
+              <div class="stat-val">1902</div>
+              <div class="stat-label">LeetCode Rating</div>
+            </div>
+            <div>
+              <div class="stat-val">1400<sup>+</sup></div>
+              <div class="stat-label">DSA Problems</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT: Live Code Animation -->
+        <div class="hero-right">
+          <div class="orb orb1" aria-hidden="true"></div>
+          <div class="orb orb2" aria-hidden="true"></div>
+          <div class="hero-code-card" role="img" aria-label="Code snippet showing Pratham's profile">
+            <div class="code-topbar">
+              <div class="code-dots">
+                <span class="code-dot code-dot-r"></span>
+                <span class="code-dot code-dot-y"></span>
+                <span class="code-dot code-dot-g"></span>
+              </div>
+              <span class="code-filename">Pratham.java</span>
+            </div>
+            <div class="code-body" id="codeBody"></div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">May 2022 - July 2022</h1>
-        <h2 class="card-title-small">Software Developement Engineer Intern</h2>
-        <h2 class="card-title-small">Curelink Pvt. Ltd.</h2>
-        <p class="card-detail">1.  API Development of new features which were useful for the doctors to analyze and track their patients health.<br>2. Contributed in revamping most of the API to make them work in their optimized form. <br><br>Skills :- Python, Django, Django Rest Framework, PostgreSQL.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     ABOUT
+     ══════════════════════════════════════════ -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="about-grid">
+
+        <div class="about-text reveal">
+          <div class="eyebrow">About Me</div>
+          <h2 class="section-title" style="margin-bottom:24px">
+            Building things that <span>scale</span>
+          </h2>
+          <p>
+            I'm a Senior Software Engineer based in Bengaluru with 3+ years of experience at Trellix, where I work on
+            enterprise cybersecurity infrastructure serving global customers. My core work involves <strong>Java, Spring
+              Boot, and Apache Kafka</strong> - building systems that handle real production load at scale.
+          </p>
+          <p>
+            What I enjoy most is <strong>designing systems end-to-end</strong> - from Low-Level Design and API contracts
+            through to deployment, monitoring, and keeping things running reliably. I believe in strong ownership: if I
+            ship it, I own it in production too.
+          </p>
+          <p>
+            Outside work, I take <strong>competitive programming seriously</strong>. I'm a LeetCode Knight with a max
+            rating of 1902 and over 1,400 problems solved - not just for interviews, but because it makes me a sharper
+            engineer who thinks clearly about performance and correctness.
+          </p>
+        </div>
+
+        <div class="about-cards reveal" data-delay="150">
+          <div class="about-card">
+            <div class="about-card-icon">☕</div>
+            <div class="about-card-val">3<sup>+</sup></div>
+            <div class="about-card-label">Years Experience</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🚀</div>
+            <div class="about-card-val">B+</div>
+            <div class="about-card-label">Records Processed</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">🏅</div>
+            <div class="about-card-val">2×</div>
+            <div class="about-card-label">Director Awards</div>
+          </div>
+          <div class="about-card">
+            <div class="about-card-icon">♞</div>
+            <div class="about-card-val">1902</div>
+            <div class="about-card-label">LeetCode Rating</div>
+          </div>
+        </div>
+
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">Sept 2021 - March 2022</h1>
-        <h1 class="card-title-small">Software Developement Engineer Intern</h1>
-        <h1 class="card-title-small">Musafir.com India Pvt. Ltd.</h1>
-        <p class="card-detail">1. Resolved VAPT cases in the software system to reduce the probability of threats.<br>2. Worked on T-SQL queries and Stored procedures, for revamping various features by increasing user retention.<br><br>Skills :- C#, ASP.NET MVC, TSQL.</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     SKILLS
+     ══════════════════════════════════════════ -->
+  <section id="skills" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Technical Skills</div>
+      <h2 class="section-title reveal">What I work <span>with</span></h2>
+
+      <div class="skills-grid">
+        <div class="skill-card reveal" data-delay="0">
+          <div class="skill-cat"><span class="skill-ico">☕</span> Languages</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">Linux</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="70">
+          <div class="skill-cat"><span class="skill-ico">⚙️</span> Frameworks</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Spring Boot</span>
+            <span class="skill-tag">Spring Framework</span>
+            <span class="skill-tag">Hibernate / JPA</span>
+            <span class="skill-tag">Microservices</span>
+            <span class="skill-tag">REST APIs</span>
+            <span class="skill-tag">Maven</span>
+            <span class="skill-tag">Gradle</span>
+            <span class="skill-tag">Node.js</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="140">
+          <div class="skill-cat"><span class="skill-ico">🧠</span> Core CS</div>
+          <div class="skill-tags">
+            <span class="skill-tag">System Design</span>
+            <span class="skill-tag">Low-Level Design</span>
+            <span class="skill-tag">OOP</span>
+            <span class="skill-tag">DSA</span>
+            <span class="skill-tag">Concurrency</span>
+            <span class="skill-tag">Problem Solving</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="70">
+          <div class="skill-cat"><span class="skill-ico">🗄️</span> Data & Messaging</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Apache Kafka</span>
+            <span class="skill-tag">PostgreSQL</span>
+            <span class="skill-tag">MongoDB</span>
+            <span class="skill-tag">Redis</span>
+            <span class="skill-tag">MySQL</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="140">
+          <div class="skill-cat"><span class="skill-ico">☁️</span> Cloud & DevOps</div>
+          <div class="skill-tags">
+            <span class="skill-tag">AWS</span>
+            <span class="skill-tag">Docker</span>
+            <span class="skill-tag">Kubernetes</span>
+            <span class="skill-tag">Jenkins</span>
+            <span class="skill-tag">CI/CD</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">Jira</span>
+            <span class="skill-tag">Confluence</span>
+          </div>
+        </div>
+
+        <div class="skill-card reveal" data-delay="210">
+          <div class="skill-cat"><span class="skill-ico">📊</span> Observability & AI</div>
+          <div class="skill-tags">
+            <span class="skill-tag">Prometheus</span>
+            <span class="skill-tag">Grafana</span>
+            <span class="skill-tag">Micrometer</span>
+            <span class="skill-tag">JMX</span>
+            <span class="skill-tag">Dropwizard</span>
+            <span class="skill-tag">GenAI / LLMs</span>
+            <span class="skill-tag">AI Pipelines</span>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="card">
-      <div class="card-body">
-        <h1 class="card-title">June 2020 - July 2020</h1>
-        <h1 class="card-title-small">Web Development Intern</h1>
-        <h1 class="card-title-small">Tebixa Technologies OPC Pvt. Ltd.</h1>
-        <p class="card-detail">1. Worked on eCommerce maintenance and management for client websites using CMS Tools.<br>2. Studied basic project requirements with assigned technical lead and planned development strategies.<br><br>Skills:- Web Design and Development, HTML, CSS, JavaScript, CMS Development</p>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     EXPERIENCE
+     ══════════════════════════════════════════ -->
+  <section id="experience" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Work Experience</div>
+      <h2 class="section-title reveal">Where I've <span>shipped things</span></h2>
+
+      <div class="timeline">
+
+        <div class="tl-item reveal">
+          <div class="tl-dot current"></div>
+          <div class="tl-header">
+            <div class="tl-role">Senior Software Development Engineer</div>
+            <div class="tl-badge now">Nov 2025 – Present</div>
+          </div>
+          <div class="tl-company">Trellix · Bengaluru, India</div>
+          <ul class="tl-bullets">
+            <li>Led <strong>Java 8 → Java 21 migration</strong> of on-prem and SaaS frameworks, achieving <strong>20%
+                reduction in infrastructure costs</strong> through modern runtime optimizations and improved resource
+              efficiency.</li>
+            <li>Architected <strong>licensing infrastructure</strong> for a high-scale Generative AI server enabling
+              global customer distribution, commercial deployment, and automated file reputation processing at
+              enterprise scale.</li>
+            <li>Re-engineered end-to-end <strong>JMX and Prometheus metrics reporting</strong> workflows to deliver
+              high-fidelity telemetry and significantly improve local instance observability and alerting coverage.</li>
+          </ul>
+          <div class="tl-stack">
+            <span class="tl-tag">Java 21</span>
+            <span class="tl-tag">Spring Boot</span>
+            <span class="tl-tag">GenAI / LLMs</span>
+            <span class="tl-tag">Prometheus</span>
+            <span class="tl-tag">AWS</span>
+            <span class="tl-tag">Microservices</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" data-delay="100">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <div class="tl-role">Software Engineer</div>
+            <div class="tl-badge">Jul 2024 – Oct 2025</div>
+          </div>
+          <div class="tl-company">Trellix · Bengaluru, India</div>
+          <ul class="tl-bullets">
+            <li>Engineered an <strong>AI-driven classification pipeline</strong> to remediate unknown file reputations
+              across <strong>billions of records</strong>, reducing unknowns by <strong>99%</strong> and accelerating
+              threat response at scale.</li>
+            <li>Designed and deployed a <strong>real-time telemetry and backend integration module</strong> surfacing
+              sandbox submission failures on a user-facing dashboard, driving a measurable reduction in support ticket
+              volume.</li>
+            <li>Conducted deep-dive <strong>Root Cause Analysis (RCA)</strong> and JVM performance tuning to resolve
+              high-priority production incidents and maintain platform stability under sustained high load.</li>
+          </ul>
+          <div class="tl-stack">
+            <span class="tl-tag">Apache Kafka</span>
+            <span class="tl-tag">PostgreSQL</span>
+            <span class="tl-tag">MongoDB</span>
+            <span class="tl-tag">Grafana</span>
+            <span class="tl-tag">Redis</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" data-delay="200">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <div class="tl-role">Associate Software Engineer</div>
+            <div class="tl-badge">Jul 2023 – Jun 2024</div>
+          </div>
+          <div class="tl-company">Trellix · Bengaluru, India</div>
+          <ul class="tl-bullets">
+            <li>Integrated enterprise security products with <strong>cloud-native and on-prem sandbox
+                environments</strong>, enabling automated, low-latency threat analysis and dynamic file detonation
+              workflows.</li>
+            <li>Re-architected <strong>VirusTotal v2 → v3 RESTful API integration</strong> layer, handling high-volume
+              JSON payloads and modernizing critical threat intelligence pipelines with zero downtime.</li>
+            <li>Built a <strong>pre-execution validation filter</strong> to assess file types before submission,
+              reducing sandbox overhead while maintaining <strong>90%+ JUnit test coverage</strong> across the service.
+            </li>
+          </ul>
+          <div class="tl-stack">
+            <span class="tl-tag">REST APIs</span>
+            <span class="tl-tag">JUnit</span>
+            <span class="tl-tag">Docker</span>
+            <span class="tl-tag">CI/CD</span>
+            <span class="tl-tag">Agile</span>
+          </div>
+        </div>
+
+        <div class="tl-item reveal" data-delay="300">
+          <div class="tl-dot"></div>
+          <div class="tl-header">
+            <div class="tl-role">Graduate Intern – Software Engineer</div>
+            <div class="tl-badge">Jan 2023 – Jul 2023</div>
+          </div>
+          <div class="tl-company">Trellix · Bengaluru, India</div>
+          <ul class="tl-bullets">
+            <li>Engineered seamless integration between the core enterprise security product and on-prem sandbox
+              environments for secure, low-latency automated threat analysis.</li>
+            <li>Optimized backend product and documentation <strong>CI/CD build pipelines</strong>, reducing deployment
+              latency via automated multi-version synchronization.</li>
+          </ul>
+          <div class="tl-stack">
+            <span class="tl-tag">Java</span>
+            <span class="tl-tag">CI/CD</span>
+            <span class="tl-tag">Jenkins</span>
+          </div>
+        </div>
+
       </div>
     </div>
-  </div>
-  </div>
-</section>
+  </section>
 
-<!--Projects-->
-<section class="services" id="pro">
-  <div class="content">
-    <div class="title"><span>Projects</span></div>
-    <div class="boxes">
-     <div class="box">
-      <a href="https://github.com/P-28032002/Skillathon_Team_3.14"><img src="Images/Capstone Project.png" alt="Projects" width="300px" height="200px"></a>
-      <h2>Seekho - Seekhav</h2>
-      <div class="topic">Capstone Project</div>
-      <p>Develop an end to end platform leveraging Decentralised Skilling and Education Protocol / Beckn Protocol for creating an open and decentralised content sharing ecosystem in skilling and education sector.</p>
-    </div>
-      <div class="box">
-        <a href="https://docs.google.com/presentation/d/102wvsrojJkmTiUC8ejfvhBiWtJdKb_Qs/"><img src="Images/Major Project.png" alt="Projects" width="300px" height="200px"></a>
-        <h2>Syncronized Speech and Video Synthesis</h2>
-        <div class="topic">Major Project</div>
-        <p>Synthesis of live video from single static image, with entire voice give as input from user, or simply a sample and a textual manuscript for audio synthesis with voice cloning, with proper features and natural features intact</p>
-    </div>
-      <div class="box">
-        <a href="https://github.com/P-28032002/Face-Recognition"><img src="Images/Minor Project.png" alt="Projects" width="300px" height="200px"></a>
-        <h2>Smart Spectacles For Criminal Detection Using Machine Learning</h2>
-        <div class="topic">Minor Project</div>
-        <p>Live detection of human faces and identification of criminals amongst then via the design of an indigenous Smart Spectacle with a mounted pinhole camera communicating with Deep learning algorithms framework at the backend.</p>
-  </div>
-</section>
-
-<!-- My Services Section Start -->
- <section class="services" id="services">
-   <div class="content">
-     <div class="title"><span>My Hobbies</span></div>
-     <div class="boxes">
-      <div class="box">
-         <div class="icon">
-           <i class="fas fa-code"></i>
-       </div>
-       <div class="topic">Competitive Programming</div>
-     </div>
-       <div class="box">
-         <div class="icon">
-           <i class="fas fa-desktop"></i>
-       </div>
-       <div class="topic">Web Development</div>
-     </div>
-       <div class="box">
-         <div class="icon">
-           <i class="fas fa-book"></i>
-       </div>
-       <div class="topic">Reading Books</div>
-     </div>
-       <div class="box">
-         <div class="icon">
-           <i class="fas fa-hiking"></i>
-       </div>
-       <div class="topic">Trekking</div>
-     </div>
-       <div class="box">
-         <div class="icon">
-            <i class="fas fa-music"></i>
-       </div>
-       <div class="topic">Listening Music</div>
-     </div>
-       <div class="box">
-         <div class="icon">
-           <i class="fas fa-globe"></i>
-       </div>
-       <div class="topic">Travelling</div>
-     </div>
-   </div>
-   </div>
- </section>
-
-<!-- Contact Me section Start -->
-<section class="contact" id="contact">
-  <div class="content">
-    <div class="title"><span>Contact Me</span></div>
-    <div class="text">
-      <div class="topic">Having any doubt in Portfolio?</div>
-      <p>If you have any doubt in my portfolio or regarding me, please feel free to contact me </p>
-      <div class="button">
-        <button><a href = "https://wa.me/917038146259">Let's Chat</a></button>
+  <!-- ══════════════════════════════════════════
+     EDUCATION
+     ══════════════════════════════════════════ -->
+  <section id="education" class="section-sm">
+    <div class="container">
+      <div class="eyebrow reveal">Education</div>
+      <h2 class="section-title reveal">Academic <span>background</span></h2>
+      <div class="edu-card reveal">
+        <div class="edu-icon-wrap">🎓</div>
+        <div>
+          <div class="edu-degree">B.Tech, Computer Engineering</div>
+          <div class="edu-uni">Savitribai Phule Pune University (SPPU)</div>
+          <div class="edu-meta">
+            <span class="edu-pill">Aug 2019 – Jul 2023</span>
+            <span class="edu-pill cgpa">CGPA: 9.42 / 10</span>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- Footer Section Start -->
-<footer>
-  <div class="text">
-    <span>Created By <a href="#">Pratham Madhani</a> | &#169; 2023 All Rights Reserved</span>
-  </div>
-</footer>
+  <!-- ══════════════════════════════════════════
+     ACHIEVEMENTS
+     ══════════════════════════════════════════ -->
+  <section id="achievements" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Recognition</div>
+      <h2 class="section-title reveal">Achievements & <span>Awards</span></h2>
 
+      <div class="ach-grid">
+
+        <div class="ach-card reveal">
+          <div class="ach-ico">🏅</div>
+          <div>
+            <div class="ach-title">2× Bravo Awards</div>
+            <div class="ach-sub">Awarded by Director of Engineering & Threat Intelligence Team at Trellix - for sandbox
+              integrations and a GenAI-powered file reputation remediation system at scale.</div>
+          </div>
+        </div>
+
+        <div class="ach-card reveal" data-delay="80">
+          <div class="ach-ico">🤖</div>
+          <div>
+            <div class="ach-title">Trellix Hack-AI-Thon 2025 Finalist</div>
+            <div class="ach-sub">Ranked Top 9 out of 150+ teams for AI innovation excellence in an internal company-wide
+              competition.</div>
+          </div>
+        </div>
+
+        <a href="https://leetcode.com/u/Insane07/" target="_blank" rel="noopener" class="ach-card reveal"
+          data-delay="80">
+          <div class="ach-ico">♞</div>
+          <div>
+            <div class="ach-title">LeetCode Knight</div>
+            <div class="ach-sub">Max rating 1902. Solved 1400+ Data Structures & Algorithms problems across all
+              difficulty levels.</div>
+            <div class="ach-cta">View profile →</div>
+          </div>
+        </a>
+
+        <a href="https://www.linkedin.com/posts/pratham-madhani-4a05091b8_creditsuisse-globalcodingchallenge-competitiveprogramming-activity-6992914687013105664-NlV2/"
+          target="_blank" rel="noopener" class="ach-card reveal" data-delay="160">
+          <div class="ach-ico">🌍</div>
+          <div>
+            <div class="ach-title">AIR 145 · Global Rank 197</div>
+            <div class="ach-sub">Global Coding Challenge 4.0 by Credit Suisse - an international competitive programming
+              competition.</div>
+            <div class="ach-cta">View post →</div>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/1oMwszkj7Lr_jmXk18tgaJAtnrVMbWV6q/view" target="_blank" rel="noopener"
+          class="ach-card reveal" data-delay="160">
+          <div class="ach-ico">🥈</div>
+          <div>
+            <div class="ach-title">Runner-Up · Citi Code Challenge 2022</div>
+            <div class="ach-sub">National level coding competition organized by Citibank India.</div>
+            <div class="ach-cta">View certificate →</div>
+          </div>
+        </a>
+
+        <a href="https://drive.google.com/file/d/11PxmNHKWCzMpge1bCnvFE8GoEvEhv7N9/view" target="_blank" rel="noopener"
+          class="ach-card reveal" data-delay="240">
+          <div class="ach-ico">🥈</div>
+          <div>
+            <div class="ach-title">Runner-Up · Amdocs Hackfest 2022</div>
+            <div class="ach-sub">National level hackathon organized by Amdocs India.</div>
+            <div class="ach-cta">View certificate →</div>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     RESUME CTA
+     ══════════════════════════════════════════ -->
+  <section id="resume-cta" class="section-sm">
+    <div class="container">
+      <div class="resume-banner reveal">
+        <div>
+          <h3>Want the full resume?</h3>
+          <p>Download my resume to see my complete experience, skills, and achievements.</p>
+        </div>
+        <button class="btn btn-white" id="downloadBtn" onclick="downloadResume()">
+          <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+            aria-hidden="true">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+            <polyline points="7 10 12 15 17 10" />
+            <line x1="12" y1="15" x2="12" y2="3" />
+          </svg>
+          Download Resume
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     CONTACT
+     ══════════════════════════════════════════ -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="eyebrow reveal">Contact</div>
+      <h2 class="section-title reveal">Let's <span>connect</span></h2>
+
+      <div class="contact-grid">
+
+        <div class="contact-intro reveal">
+          <h3>Always happy to connect and have a good conversation.</h3>
+          <p>Have an interesting role, project, or just want to talk engineering? Reach out through any of these
+            channels - I respond to every message.</p>
+          <div class="contact-links">
+            <a href="mailto:prathamadhani28@gmail.com" class="contact-link">
+              <div class="cl-icon">✉️</div>
+              prathamadhani28@gmail.com
+            </a>
+            <a href="https://linkedin.com/in/pratham-madhani-4a05091b8" target="_blank" rel="noopener"
+              class="contact-link">
+              <div class="cl-icon">💼</div>
+              linkedin.com/in/pratham-madhani
+            </a>
+            <a href="https://github.com/prathammadhani" target="_blank" rel="noopener" class="contact-link">
+              <div class="cl-icon">🐙</div>
+              github.com/prathammadhani
+            </a>
+            <a href="https://leetcode.com/u/Insane07/" target="_blank" rel="noopener" class="contact-link">
+              <div class="cl-icon">♞</div>
+              leetcode.com/u/Insane07
+            </a>
+          </div>
+        </div>
+
+        <div class="reveal" data-delay="120">
+          <!-- ── UPDATED FORM FOR CLIENT-SIDE WEB3FORMS ── -->
+          <form class="contact-form" id="contactForm" novalidate>
+            <!-- Web3Forms Config Key (Replace with your actual key string) -->
+            <input type="hidden" name="access_key" value="dd4304f2-cd91-4f06-90ec-86971ffade95" />
+
+            <!-- Optional customization fields for your inbound notifications -->
+            <input type="hidden" name="subject" value="New Portfolio Contact Form Submission" />
+            <input type="hidden" name="from_name" value="Portfolio Portal" />
+
+            <div class="form-group">
+              <label class="form-label" for="name">Your Name</label>
+              <input id="name" name="name" type="text" class="form-input" placeholder="John Smith" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="email">Email Address</label>
+              <input id="email" name="email" type="email" class="form-input" placeholder="john@company.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="message">Message</label>
+              <textarea id="message" name="message" class="form-textarea" placeholder="What's on your mind?"
+                required></textarea>
+            </div>
+            <div class="form-status" id="formStatus"></div>
+            <button type="submit" class="btn btn-primary" id="formBtn" style="width:100%;justify-content:center">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"
+                aria-hidden="true">
+                <line x1="22" y1="2" x2="11" y2="13" />
+                <polygon points="22 2 15 22 11 13 2 9 22 2" />
+              </svg>
+              Send Message
+            </button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════════
+     FOOTER
+     ══════════════════════════════════════════ -->
+  <footer>
+    <div class="container footer-inner">
+      <div>
+        <div class="footer-logo">Pratham Madhani<span>.</span></div>
+        <div class="footer-tagline">Senior Software Engineer · Java Backend · Distributed Systems</div>
+      </div>
+
+      <div class="footer-socials">
+        <a href="https://linkedin.com/in/pratham-madhani-4a05091b8" target="_blank" rel="noopener" class="social-btn"
+          title="LinkedIn" aria-label="LinkedIn">💼</a>
+        <a href="https://github.com/prathammadhani" target="_blank" rel="noopener" class="social-btn" title="GitHub"
+          aria-label="GitHub">🐙</a>
+        <a href="https://leetcode.com/u/Insane07/" target="_blank" rel="noopener" class="social-btn" title="LeetCode"
+          aria-label="LeetCode">♞</a>
+        <a href="mailto:prathamadhani28@gmail.com" class="social-btn" title="Email" aria-label="Email">✉️</a>
+      </div>
+
+      <a href="#hero" class="back-top" aria-label="Back to top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <!-- Script -->
   <script src="script.js"></script>
+
 </body>
+
 </html>

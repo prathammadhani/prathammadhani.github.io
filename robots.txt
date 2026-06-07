@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://prathammadhani.github.io/sitemap.xml
