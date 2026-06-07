@@ -192,7 +192,7 @@ async function downloadResume() {
     btn.disabled = true;
   }
 
-  let resume = 'resume_relocation.pdf';
+  let resume = 'assets/resume_relocation.pdf';
   let label  = 'Resume';
 
   try {
@@ -209,7 +209,7 @@ async function downloadResume() {
       // Internal validation routing for Bengaluru / Bangalore locales
       if (city.includes('bengaluru') || city.includes('bangalore') ||
           (region.includes('karnataka') && city.includes('bang'))) {
-        resume = 'resume_bengaluru.pdf';
+        resume = 'assets/resume_bengaluru.pdf';
         label  = 'Resume_Bengaluru';
       }
     }
@@ -409,7 +409,7 @@ async function submitForm(e) {
 
       setTimeout(() => {
         const r = checkRateLimit();
-        if (r.blocked) lockForm(r.dynamicDaysLeft || COOLDOWN_DAYS, new Date());
+        if (r.blocked) lockForm(r.daysLeft, new Date());
       }, 2800);
 
     } else {
